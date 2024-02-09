@@ -10,7 +10,7 @@ export const DrumPad: React.FC = () => {
   const buttonRefs = btnRefs.current;
 
   const baseClass =
-    "drum-pad h-full w-full rounded-2xl bg-gray-900 p-10 text-xl text-white outline-blue-500 hover:outline hover:outline-2";
+    "drum-pad h-full w-full rounded-2xl p-10 text-xl text-white outline-blue-500 hover:outline hover:outline-2";
   const active = "bg-blue-700 scale-95 outline outline-2";
   const inactive = "bg-gray-900";
 
@@ -50,7 +50,7 @@ export const DrumPad: React.FC = () => {
           <button
             key={clip.id}
             id={clip.id}
-            className={baseClass}
+            className={`${baseClass} ${inactive}`}
             onClick={() => handleClick(index, clip.id)}
             disabled={!power}
             ref={(element: HTMLButtonElement) => {
